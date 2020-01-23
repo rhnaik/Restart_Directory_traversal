@@ -9,8 +9,10 @@
 
 using namespace std;
 
-//Refer: ://www.geeksforgeeks.org/c-program-list-files-sub-directories-directory/ for base source code
-//
+/*
+* Refer: ://www.geeksforgeeks.org/c-program-list-files-sub-directories-directory/ for base source code
+*/
+
 int main()
 {
 	struct dirent* de = NULL;  // Pointer for directory entry
@@ -28,10 +30,7 @@ int main()
 	// for readdir()
 	while ((de = readdir(dr)) != NULL)
 	{
-		printf("%s\n", de->d_name);
-		// telldir returns the current  location in directory stream.
-	    // telldir: https://linux.die.net/man/3/telldir
-		cout << "\n Tell Dir:" << telldir(dr) << "\n";
+	     cout << "\n Tell Dir:" << telldir(dr) << "\n";
 	}
 
 	closedir(dr);
@@ -61,3 +60,4 @@ int main()
 	closedir(dr);
 
 	return 0;
+}
